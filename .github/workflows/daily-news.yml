@@ -2,8 +2,8 @@ name: Generate daily news
 
 on:
   schedule:
-    # 08:00 Asia/Seoul (23:00 UTC on the previous day)
-    - cron: '0 23 * * *'
+    # 08:45 Asia/Seoul (23:45 UTC on the previous day)
+    - cron: '45 23 * * *'
   workflow_dispatch:
 
 permissions:
