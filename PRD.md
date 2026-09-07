@@ -384,9 +384,9 @@ Codex Automation 자체의 인증은 GitHub Actions와 분리한다.
 
 ## 17. Codex Automation
 
-Codex Automation은 매일 오전 7시(KST)에 실행한다.
+Codex Automation은 매일 오전 8시(KST)에 실행한다.
 
-`07:00 Asia/Seoul`
+`08:00 Asia/Seoul`
 
 실행 과정:
 
