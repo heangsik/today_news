@@ -5,6 +5,7 @@ import { getSeoulDate } from '../src/news/date.ts';
 
 const feeds = [
   { source: 'Google News Korea', feedUrl: 'https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko' },
+  { source: '세계 뉴스', feedUrl: 'https://news.google.com/rss/headlines/section/topic/WORLD?hl=ko&gl=KR&ceid=KR:ko' },
   { source: '연합뉴스', feedUrl: 'https://www.yna.co.kr/rss/news.xml' },
 ];
 

@@ -8,6 +8,7 @@ const score = (article: NewsArticle) => (article.title + ' ' + (article.descript
 const ranked = [...articles].sort((a, b) => score(b) - score(a));
 const top = ranked.slice(0, 10);
 const it = ranked.filter((article) => /AI|LLM|반도체|클라우드|소프트웨어|보안|개발/i.test(`${article.title} ${article.description ?? ''}`)).slice(0, 10);
+const world = ranked.filter((article) => article.source === '세계 뉴스').slice(0, 10);
 const economy = ranked.filter((article) => /경제|금리|환율|증시|물가|고용|기업|산업|정책|market|economy|rate/i.test(`${article.title} ${article.description ?? ''}`)).slice(0, 10);
 const date = getSeoulDate();
 const { year, month, day } = getDateParts(date);
@@ -55,6 +56,7 @@ const markdown = [
   '# 오늘 반드시 알아야 할 5가지', '', ...top.slice(0, 5).map((article, index) => `${index + 1}. [${article.title}](${article.url})`), '',
   '# 주요 뉴스 TOP 10', '', ...top.map((article) => render(article, 'major')),
   '# IT 뉴스 TOP 10', '', ...it.map((article) => render(article, 'it', true)),
+  '# 세계 뉴스 TOP 10', '', ...world.map((article) => render(article, 'major')),
   '# 경제 뉴스 TOP 10', '', ...economy.map((article) => render(article, 'economy')),
 ].join('\n');
 
