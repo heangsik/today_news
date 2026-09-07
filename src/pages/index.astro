@@ -13,7 +13,7 @@ const latest = newsEntries.sort((a, b) => String(b.frontmatter.date).localeCompa
       * { box-sizing: border-box; }
       body { margin: 0; }
       .paper { max-width: 1180px; margin: 0 auto; padding: 28px 42px 72px; background: #f8f3e8; min-height: 100vh; box-shadow: 0 0 24px #2b241514; }
-      .masthead { text-align: center; border-top: 4px double #1f1b16; border-bottom: 4px double #1f1b16; padding: 18px 0 12px; }
+      .top-nav { display: flex; justify-content: flex-end; margin-bottom: 14px; font: 700 0.78rem/1 Arial, sans-serif; letter-spacing: 0.08em; } .top-nav a { color: #6e1d16; text-decoration: none; border-bottom: 1px solid #6e1d16; padding-bottom: 3px; } .masthead { text-align: center; border-top: 4px double #1f1b16; border-bottom: 4px double #1f1b16; padding: 18px 0 12px; }
       .kicker { margin: 0 0 8px; font: 700 0.72rem/1 Arial, sans-serif; letter-spacing: 0.24em; text-transform: uppercase; }
       h1 { margin: 0; font-size: clamp(2.7rem, 7vw, 5.8rem); line-height: 0.9; letter-spacing: -0.06em; }
       .edition { display: flex; justify-content: space-between; gap: 16px; margin-top: 14px; font: 700 0.72rem/1.2 Arial, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -30,7 +30,7 @@ const latest = newsEntries.sort((a, b) => String(b.frontmatter.date).localeCompa
     </style>
   </head>
   <body>
-    <main class="paper">
+    <main class="paper"><nav class="top-nav"><a href={import.meta.env.BASE_URL + 'news/'}>뉴스 목록 · 지난 데이터</a></nav>
       <header class="masthead">
         <p class="kicker">Morning Edition · Korea</p>
         <h1>Morning News</h1>
