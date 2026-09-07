@@ -1,0 +1,19 @@
+---
+const newsEntries = await Astro.glob('../content/news/**/*.md');
+const latest = newsEntries.sort((a, b) => String(b.frontmatter.date).localeCompare(String(a.frontmatter.date)))[0];
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{latest?.frontmatter.title ?? 'Morning News'}</title>
+  </head>
+  <body>
+    <main>
+      <h1>{latest?.frontmatter.title ?? 'Morning News'}</h1>
+      {latest ? <latest.Content /> : <p>아직 생성된 뉴스가 없습니다.</p>}
+    </main>
+  </body>
+</html>
