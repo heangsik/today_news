@@ -5,6 +5,6 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 ---
-<html lang="ko"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>{entry.frontmatter.title}</title></head><body><main><p><a href={import.meta.env.BASE_URL + 'news/'}>← 지난 뉴스</a></p><entry.Content /></main></body></html>
+<html lang="ko"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>{entry.frontmatter.title}</title></head><body><main><p><a href={import.meta.env.BASE_URL + '/news/'}>← 지난 뉴스</a></p><entry.Content /></main></body></html>
 
 

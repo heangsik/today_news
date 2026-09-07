@@ -4,6 +4,6 @@ const groups = new Map();
 for (const entry of entries) { const date = new Date(entry.frontmatter.date).toISOString().slice(0, 10); const key = date.slice(0, 7); groups.set(key, [...(groups.get(key) ?? []), entry]); }
 const base = import.meta.env.BASE_URL;
 ---
-<html lang="ko"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>뉴스 아카이브</title></head><body><main><h1>뉴스 아카이브</h1><p><a href={`${base}`}>최신 뉴스</a> · <a href={`${base}news/`}>날짜별 목록</a></p>{[...groups].sort(([a], [b]) => b.localeCompare(a)).map(([month, monthEntries]) => <section><h2>{month}</h2><ul>{monthEntries.sort((a,b)=>String(b.frontmatter.date).localeCompare(String(a.frontmatter.date))).map((entry)=><li><a href={`${base}news/${entry.frontmatter.date}/`}>{entry.frontmatter.title}</a></li>)}</ul></section>)}</main></body></html>
+<html lang="ko"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>뉴스 아카이브</title></head><body><main><h1>뉴스 아카이브</h1><p><a href={`${base}/`}>최신 뉴스</a> · <a href={`${base}/news/`}>날짜별 목록</a></p>{[...groups].sort(([a], [b]) => b.localeCompare(a)).map(([month, monthEntries]) => <section><h2>{month}</h2><ul>{monthEntries.sort((a,b)=>String(b.frontmatter.date).localeCompare(String(a.frontmatter.date))).map((entry)=><li><a href={`${base}/news/${new Date(entry.frontmatter.date).toISOString().slice(0, 10)}/`}>{entry.frontmatter.title}</a></li>)}</ul></section>)}</main></body></html>
 
 
