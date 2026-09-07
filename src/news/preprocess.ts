@@ -1,6 +1,6 @@
 import type { NewsArticle } from './types.js';
 
-const MAX_AGE_MS = 48 * 60 * 60 * 1000;
+const MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const TRACKING_PARAMETERS = new Set([
   'utm_source',
   'utm_medium',
