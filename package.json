@@ -1,0 +1,27 @@
+{
+  "name": "morning-news-bot",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "news:collect": "node --experimental-strip-types scripts/collect-news.ts",
+    "news:prepare": "node --experimental-strip-types scripts/prepare-news.ts",
+    "news:generate": "node --experimental-strip-types scripts/generate-news.ts",
+    "news:validate": "node --experimental-strip-types scripts/validate-news.ts",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
+    "astro": "^5.13.0",
+    "fast-xml-parser": "^5.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
