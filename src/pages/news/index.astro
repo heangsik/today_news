@@ -1,0 +1,8 @@
+---
+const entries = await Astro.glob('../../content/news/**/*.md');
+const sorted = entries.sort((a, b) => String(b.frontmatter.date).localeCompare(String(a.frontmatter.date)));
+const base = import.meta.env.BASE_URL;
+---
+<html lang="ko"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>지난 뉴스</title></head><body><main><h1>지난 뉴스</h1><p><a href={`${base}`}>최신 뉴스</a> · <a href={`${base}archive/`}>연·월별 보기</a></p><ul>{sorted.map((entry) => <li><a href={`${base}news/${entry.frontmatter.date}/`}>{entry.frontmatter.title}</a></li>)}</ul></main></body></html>
+
+
